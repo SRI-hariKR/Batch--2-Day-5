@@ -1,0 +1,12 @@
+// change the next pointer pointing to itself
+public boolean hasCycle(ListNode head) {
+    ListNode next = head;
+    while (next != null) {
+        if (next.next == next)
+            return true;
+        ListNode tmp = next.next;
+        next.next = next;
+        next = tmp;
+    }
+    return false;
+}
